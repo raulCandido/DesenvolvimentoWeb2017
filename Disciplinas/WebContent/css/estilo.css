@@ -1,15 +1,12 @@
-body{
+body {
 	font-family: Verdana;
-	
 }
 
-
-
-table{
-	font-family: Verdana;	
+table {
+	font-family: Verdana;
 }
 
-th{
+th {
 	text-align: left;
 	background-color: green;
 	color: white;
@@ -17,23 +14,25 @@ th{
 	padding: 5px 15px;
 }
 
-td{
+td {
 	text-align: center;
 	font-size: 14px;
 }
 
-caption{
+caption {
 	background-color: activeborder;
 	color: green;
 	padding: 10px 15px;
 }
-button{
+
+button {
 	background-color: blue;
 	color: white;
 	padding: 10px 15px;
 	width: 200px;
 }
-legend{
+
+legend {e
 	font-size: 12px;
 	color: blue;
 }
@@ -46,6 +45,7 @@ legend{
 	color: white;
 	padding: 5px 15px;
 }
+
 #Equipe td {
 	text-align: center;
 	font-size: 10px;
