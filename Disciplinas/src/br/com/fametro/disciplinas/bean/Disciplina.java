@@ -1,4 +1,4 @@
-package dados;
+package br.com.fametro.disciplinas.bean;
 
 public class Disciplina {
 

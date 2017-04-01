@@ -1,19 +1,18 @@
-package telas;
+package br.com.fametro.disciplinas.view;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/CadastrarTurma")
-public class CadastrarTurma extends HttpServlet {
+@WebServlet("/CadastrarDisciplinas")
+public class CadastrarDisciplinas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public CadastrarTurma() {
+    public CadastrarDisciplinas() {
         super();
     }
 
@@ -21,18 +20,18 @@ public class CadastrarTurma extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		out.append("<html>");
-		out.append("	<head><title>Cadastro de Turmas</title>");
+		out.append("	<head><title>Cadastro de Disciplinas</title>");
 		out.append("		<link rel='stylesheet' type='text/css' href='estilo.css'>");
 		out.append(" 	</head>");
 		out.append("	<body>");
 		out.append("	<form action='SalvarAluno'>");
 		out.append("	<table width=100%>");
-		out.append("		<caption>Cadastro de Turmas</caption>");
-		out.append("		<tr><th colspan=3>Dados da Turma</th></tr>");
+		out.append("		<caption>Cadastro de Disciplinas</caption>");
+		out.append("		<tr><th colspan=3>Dados da Disciplina</th></tr>");
 		out.append("		<tr>"
 				+ "<td colspan=2><fieldset><legend>Descrição</legend><input type='text' size=80></fieldset></td>"
+				+ "<td><fieldset><legend>Carga Horária</legend><input type='text'></fieldset></td>"
 				+ "</tr>");
-		out.append("		<tr><th>Compor Turma</th></tr>");
 		out.append("		<tr>"
 				+ "<td colspan=3><fieldset><legend>Meterial</legend><input type='text' size=80></fieldset></td>"
 				+ "</tr>");
