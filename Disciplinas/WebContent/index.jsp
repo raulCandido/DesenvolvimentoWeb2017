@@ -5,15 +5,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-	<title>Disciplinas</title>
-	
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/estiloprincipal.css" rel="stylesheet">
-	<link href="css/paginalogin.css" rel="stylesheet">
-	<link href="imagens/favicon.ico" rel="icon">
+	<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+	<link href="resources/css/estiloprincipal.css" rel="stylesheet">
+	<link href="resources/css/paginalogin.css" rel="stylesheet">
+	<link href="resources/img/favicon.ico" rel="icon">
 	<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<title>Disciplinas</title>
 </head>
 
 <body>
