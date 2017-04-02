@@ -1,0 +1,32 @@
+.localizacaologofamentro {
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    
+}
+
+.formulariodelogin {
+    display: table;
+    margin-top: 1ch;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.labelsadireta {
+    float: left;
+    width: auto;
+    clear: both;
+}
+
+.inputesquerda {
+    float: right;
+    width: auto;
+}
+.clear{
+    clear: both;
+}

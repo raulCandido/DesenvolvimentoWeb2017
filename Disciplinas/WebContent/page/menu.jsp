@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" pageEncoding="UTF-8" session="false"%>
+<!DOCTYPE html >
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="estilo.css">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
 <title>|| Sistema de Disciplinas ||</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
 		<tr><td><br></td></tr>
 		<tr><td><a href="CadastrarAluno"><button>Cadastrar Alunos</button></a></td></tr>
 		<tr><td><a href="CadastrarProfessor"><button>Cadastrar Professor</button></a></td></tr>
-		<tr><td><a href="CadastrarFuncionario"><button>Cadastrar Funcionário</button></a></td></tr>
+		<tr><td><a href="CadastrarFuncionario"><button>Cadastrar FuncionÃ¡rio</button></a></td></tr>
 		<tr><td><a href="CadastrarDisciplinas"><button>Cadastrar Disciplina</button></a></td></tr>
 		<tr><td><a href="CadastrarTurma"><button>Cadastrar Turma</button></a></td></tr>
 		<tr><td><a href="CadastrarClasses"><button>Cadastrar Classe</button></a></td></tr>

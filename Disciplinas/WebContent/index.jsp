@@ -1,48 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" pageEncoding="UTF-8" session="false"%>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="estilo.css">
-<title>|| Login ||</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
+	<title>Disciplinas</title>
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/estiloprincipal.css" rel="stylesheet">
+	<link href="css/paginalogin.css" rel="stylesheet">
+	<link href="imagens/favicon.ico" rel="icon">
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-	<center>
-		<table width=50%>
-			<tr>
-				<td><img src='imagens/logo_fametro.png'></td>
-			</tr>
-			<tr>
-				<td><br>
-				<br></td>
-			</tr>
-			<tr>
-				<td><span
-					style="font-size: 22px; background-color: #008040; color: white; padding: 20px 40px;">Sistema
-						de Disciplinas - Login</span></td>
-			</tr>
-			<tr>
-				<td><br></td>
-			</tr>
 
-		</table>
-		<table width=200px>
-			<tr>
-				<th>Matricula</th>
-				<td><input type="text"></td>
-			</tr>
-			<tr>
-				<th>Senha</th>
-				<td><input type="password"></td>
-			</tr>
-			<tr>
-				<td colspan=2><a href="menu.jsp"><input type='button'
-						value='Acessar'></a>&nbsp;<input type="submit"
-					value="Cancelar"></td>
-			</tr>
-		</table>
-	</center>
+	<img class="localizacaologofamentro" src="logo_fametro.png"	alt="Foto logo da Fametro">
+	<form>
+		<div class="formulariodelogin">
+			<div class="form-group labelsadireta">
+				<label for="matricula">Matricula </label> 
+				<input type="text" class="form-control" id="matricula" placeholder="Digite sua matricula" required>
+			</div>
+			<div class="form-group labelsadireta">
+				<label for="matricula">Senha </label>
+				<input type="password" class="form-control " id="matricula" placeholder="Digite sua senha" required>
+			</div>
+		</div>
+		<div class="formulariodelogin">
+			<button type="submit" class="btn btn-default">Entrar</button>
+		</div>
+	</form>
 
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>
