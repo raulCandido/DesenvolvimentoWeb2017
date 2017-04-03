@@ -18,7 +18,7 @@
 
 <body>
 
-	<img class="localizacaologofamentro" src="imagens/logo_fametro.png"	alt="Foto logo da Fametro">
+	<img class="localizacaologofamentro" src="resources/img/logo_fametro.png"	alt="Foto logo da Fametro">
 	<form>
 		<div class="formulariodelogin">
 			<div class="form-group labelsadireta">

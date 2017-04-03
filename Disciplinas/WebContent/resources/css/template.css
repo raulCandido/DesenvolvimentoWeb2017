@@ -1,0 +1,10 @@
+.labelsadireta {
+    box-sizing: border-box;
+    float: right;
+}
+
+.rodape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

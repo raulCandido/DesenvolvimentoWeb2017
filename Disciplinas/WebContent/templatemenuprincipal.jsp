@@ -10,8 +10,10 @@
 <!--     <link href="resources/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="resources/css/bootstrap-theme.css" rel="stylesheet">
     <link href="resources/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/estiloprincipal.css" rel="stylesheet">
-    <link href="css/paginalogin.css" rel="stylesheet">
+    <link href="resources/css/estiloprincipal.css" rel="stylesheet">
+    <link href="resources/css/paginalogin.css" rel="stylesheet">
+    <link href="resources/css/template.css" rel="stylesheet">
+    
     <link href="resources/img/favicon.ico" rel="icon">
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
@@ -65,6 +67,9 @@
         </div>
     </nav>
 </div>
-    <h1>Tela que deve ser aberta</h1>
+    <footer class="panel-footer rodape">
+        Rodape
+    </footer>
+    
 </body>
 </html>
