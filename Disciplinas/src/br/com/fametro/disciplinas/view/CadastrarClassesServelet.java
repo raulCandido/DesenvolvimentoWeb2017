@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/CadastrarClasses")
-public class CadastrarClasses extends HttpServlet {
+public class CadastrarClassesServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public CadastrarClasses() {
+    public CadastrarClassesServelet() {
         super();
     }
 

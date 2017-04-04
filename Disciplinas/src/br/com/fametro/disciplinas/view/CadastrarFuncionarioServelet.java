@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class CadastrarFuncionario
  */
 @WebServlet("/CadastrarFuncionario")
-public class CadastrarFuncionario extends HttpServlet {
+public class CadastrarFuncionarioServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CadastrarFuncionario() {
+    public CadastrarFuncionarioServelet() {
         super();
         // TODO Auto-generated constructor stub
     }
