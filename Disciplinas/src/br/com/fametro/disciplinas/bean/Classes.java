@@ -2,27 +2,32 @@ package br.com.fametro.disciplinas.bean;
 
 public class Classes {
 
-	private int Id;
-	private int Turma;
-	private int Aluno;
+	private int id;
+	private int turma;
+	private int aluno;
+
 	public int getId() {
-		return Id;
+		return id;
 	}
+
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
-	public int getTurma() {
-		return Turma;
+
+	public int getturma() {
+		return turma;
 	}
+
 	public void setTurma(int turma) {
-		Turma = turma;
+		this.turma = turma;
 	}
+
 	public int getAluno() {
-		return Aluno;
+		return aluno;
 	}
+
 	public void setAluno(int aluno) {
-		Aluno = aluno;
+		this.aluno = aluno;
 	}
-	
-	
+
 }

@@ -2,17 +2,17 @@ package br.com.fametro.disciplinas.bean;
 
 public class Turma {
 
-	private int Id;
+	private int id;
 	private int Disciplina;
 	private int Ano;
 	private int Semestre;
 	private int Professor;
 	private String DaSemana;
 	public int getId() {
-		return Id;
+		return id;
 	}
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 	public int getDisciplina() {
 		return Disciplina;

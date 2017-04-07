@@ -1,5 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8" session="false"%>
-<%@ include file="templatemenuprincipal.jsp" %>
+<%@ include file="page/templateprincipal.jsp" %>
 <!DOCTYPE html >
 <html>
 <head>
