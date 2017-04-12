@@ -1,5 +1,11 @@
 <%@ page language="java" pageEncoding="UTF-8" session="false"%>
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <!DOCTYPE html>
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -21,6 +27,7 @@
 	<img class="localizacaologofamentro" src="resources/img/logo_fametro.png"	alt="Foto logo da Fametro">
 	<form  action="RealizarLoginServelet" method="post">
 		<div class="formulariodelogin">
+		
 			<div class="form-group labelsadireta">
 				<label for="matricula">Matricula </label> 
 				<input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matricula">

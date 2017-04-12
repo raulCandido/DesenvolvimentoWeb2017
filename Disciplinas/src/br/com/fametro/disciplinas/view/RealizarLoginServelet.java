@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fametro.disciplinas.controle.LoginUsuarioControle;
+import br.com.fametro.disciplinas.exception.ServerExceptionDaoDisciplina;
 
 /**
  Autor: Raul Candido
@@ -28,7 +29,16 @@ public class RealizarLoginServelet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		loginUsuarioControle.verificarUsuario(request.getParameter("matricula"), request.getParameter("senha"));
+		
+			try {
+				loginUsuarioControle.verificarUsuario(request.getParameter("matricula"), request.getParameter("senha"));
+				response.sendRedirect("menu.jsp");
+				} catch (ServerExceptionDaoDisciplina e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		
 	}
 
 }

@@ -1,6 +1,6 @@
 package br.com.fametro.disciplinas.exception;
 
-public class ServerExceptionDaoDisciplina extends RuntimeException{
+public class ServerExceptionDaoDisciplina extends Exception{
 	
 	/**
 	 Autor: Raul Candido

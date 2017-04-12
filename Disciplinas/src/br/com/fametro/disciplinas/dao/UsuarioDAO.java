@@ -52,15 +52,14 @@ public class UsuarioDAO {
 
 	public boolean usuarioLogin(String matricula, String senha) throws ServerExceptionDaoDisciplina {
 		if (matricula.equalsIgnoreCase("") || matricula == null || senha.equals("") || senha == null) {
-			throw new ServerExceptionDaoDisciplina("-------------Usuario nao cadastrado ------------");
+			throw new ServerExceptionDaoDisciplina("Preencher campos");
 		} else {
-			Usuario usuario = new Usuario();
 			for (Usuario usuarioDaLista : USUARIO.values()) {
-				if (usuarioDaLista.getPessoa().getMatricula().equals(matricula) && usuarioDaLista.getSenha().equals(senha)) {
-					usuario = usuarioDaLista;
+				if (usuarioDaLista.getPessoa().getMatricula().equals(matricula) && usuarioDaLista.getSenha().equals(senha)){
+					return true;
+					}				
 				}
-			}
-			return true;
+			throw new ServerExceptionDaoDisciplina("Usuario nao cadastrado");
 		}
 
 	}
