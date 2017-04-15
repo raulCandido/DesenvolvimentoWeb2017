@@ -26,15 +26,16 @@
 
 	<img class="localizacaologofamentro" src="resources/img/logo_fametro.png"	alt="Foto logo da Fametro">
 	<form  action="RealizarLoginServelet" method="post">
+	
+	
 		<div class="formulariodelogin">
-		
 			<div class="form-group labelsadireta">
 				<label for="matricula">Matricula </label> 
-				<input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matricula">
+				<input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite sua matricula" required>
 			</div>
 			<div class="form-group labelsadireta">
 				<label for="matricula">Senha </label>
-				<input type="password" class="form-control " id="senha" name="senha" placeholder="Digite sua senha">
+				<input type="password" class="form-control " id="senha" name="senha" placeholder="Digite sua senha" required>
 			</div>
 		</div>
 		<div class="formulariodelogin">

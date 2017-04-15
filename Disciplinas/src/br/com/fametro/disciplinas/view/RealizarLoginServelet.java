@@ -34,7 +34,7 @@ public class RealizarLoginServelet extends HttpServlet {
 				loginUsuarioControle.verificarUsuario(request.getParameter("matricula"), request.getParameter("senha"));
 				response.sendRedirect("menu.jsp");
 				} catch (ServerExceptionDaoDisciplina e) {
-				// TODO Auto-generated catch block
+				request.setAttribute("usuarioNaoEncontrado", e.getLocalizedMessage());
 				e.printStackTrace();
 			}
 			
