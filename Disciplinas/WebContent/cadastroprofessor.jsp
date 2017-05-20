@@ -11,6 +11,6 @@
 <head>
 </head>
 <body>
-	BODY AQUI
+	Cadastro professor
 </body>
 </html>
