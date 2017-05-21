@@ -18,14 +18,24 @@
 		<form action="">
 			<div class="row">
 				<div class="form-group col-md-1">
-					<label for="idusuario">Código</label> <input type="number"
+					<label for="idFuncionario">Código</label> <input type="number"
 						class="form-control" id="idUsuario">
+				</div>
+				<div class="form-group col-md-1">
+					<label for="numeroMatricula">Matricula</label> <input
+						type="text" class="form-control" id="numeroMatricula">
 				</div>
 
 				<div class="form-group col-md-3">
-					<label for="nomeDisciplina">Nome disciplina</label> <input
-						type="text" class="form-control" id="idpessoa">
+					<label for="nomeFuncionario">Nome</label> <input
+						type="text" class="form-control" id="nomeFuncionario">
 				</div>
+				
+				<div class="form-group col-md-2">
+					<label for="nomeCargo">Cargo</label> <input
+						type="text" class="form-control" id="nomeCargo">
+				</div>
+				
 			</div>
 			<hr />
 			<div id="list" class="row">
@@ -36,9 +46,9 @@
 							<tr>
 								<th>Código</th>
 								<th>Nome</th>
-								<th>Material</th>
-								<th>Livros</th>
-								<th>Ementa</th>
+								<th>Cargo</th>
+								<th>Matricula</th>
+								<th>Email</th>
 								<th class="actions">Ações</th>
 							</tr>
 						</thead>
@@ -46,10 +56,10 @@
 
 							<tr>
 								<td>01</td>
-								<td>Matematica Discreta</td>
-								<td>Material matematica discreta</td>
-								<td>Livro matematica discreta</td>
-								<td>Ementa</td>
+								<td>Joao da Silva</td>
+								<td>Secretaria</td>
+								<td>123212</td>
+								<td>joao.silva@gmail.com</td>
 								<td class="actions"><a class="btn btn-success btn-xs"
 									href="view.html">Visualizar</a> <a
 									class="btn btn-warning btn-xs" href="edit.html">Editar</a></td>
