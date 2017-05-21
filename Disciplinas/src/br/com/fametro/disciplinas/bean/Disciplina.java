@@ -3,7 +3,7 @@ package br.com.fametro.disciplinas.bean;
 public class Disciplina {
 
 	private int id;
-	private String disciplina;
+	private String nomeDisciplina;
 	private String CargaHoraria;
 	private String Material;
 	private String Livros;
@@ -18,11 +18,11 @@ public class Disciplina {
 	}
 
 	public String getDisciplina() {
-		return disciplina;
+		return nomeDisciplina;
 	}
 
 	public void setDisciplina(String disciplina) {
-		this.disciplina = disciplina;
+		this.nomeDisciplina = disciplina;
 	}
 
 	public String getCargaHoraria() {

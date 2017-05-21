@@ -28,7 +28,8 @@ public class UsuarioDAO {
 
 	private void gerarUsuario(Usuario usuario) {
 		try {
-			PreparedStatement insert = registrarJDBCAdapter.preparedStatement(insertUsuarioSql);
+			PreparedStatement insert = null;
+			insert = registrarJDBCAdapter.preparedStatement(insertUsuarioSql);
 			insert.setLong(4, usuario.getId());
 			insert.setLong(4, usuario.getPessoa().getId());
 			insert.setString(4, usuario.getSenha());

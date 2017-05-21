@@ -10,15 +10,15 @@
 
 <html>
 <head>
-<title>Controle de usuário</title>
+<title>Controle de Disciplina</title>
 </head>
 <body>
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">Pesquisar usuario</h3>
+		<h3 class="page-header">Pesquisar Disciplina</h3>
 		<form action="">
 			<div class="row">
 				<div class="form-group col-md-4">
-					<label for="idusuario">Id usuario</label>
+					<label for="idDisciplina">Código</label>
 					<input type="number"
 						class="form-control" id="idUsuario">
 				</div>

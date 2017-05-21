@@ -10,11 +10,11 @@
 
 <html>
 <head>
-<title>Controle de usuário</title>
+<title>Controle de Funcionario</title>
 </head>
 <body>
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">Pesquisar Disciplina</h3>
+		<h3 class="page-header">Pesquisar Funcionario</h3>
 		<form action="">
 			<div class="row">
 				<div class="form-group col-md-1">

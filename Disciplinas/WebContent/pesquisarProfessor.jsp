@@ -10,11 +10,11 @@
 
 <html>
 <head>
-<title>Controle de usuário</title>
+<title>Controle de Professor</title>
 </head>
 <body>
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">Pesquisar usuario</h3>
+		<h3 class="page-header">Pesquisar Professor</h3>
 		<form action="">
 			<div class="row">
 				<div class="form-group col-md-4">

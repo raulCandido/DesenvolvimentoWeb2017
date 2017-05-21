@@ -47,16 +47,18 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Controle de Pessoa<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./pesquisarUsuario.jsp">Funcionario</a></li>
+                            <li><a href="./pesquisarFuncionario.jsp">Funcionario</a></li>
+                            <li><a href="./pesquisarProfessor.jsp">Professor</a></li>
                             <li><a href="./pesquisarAluno.jsp">Aluno</a></li>
+                            <li><a href="./pesquisarUsuario.jsp">Usuario</a></li>
                         </ul>
                     </li>
                     
                      <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Controle de Disciplina<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./pesquisarUsuario.jsp">Funcionario</a></li>
-                            <li><a href="./pesquisarAluno.jsp">Aluno</a></li>
+                            <li><a href="./pesquisarDisciplina.jsp">Disciplina</a></li>
+                            <li><a href="./pesquisarTurma.jsp">Turma</a></li>
                         </ul>
                     </li>
                 </ul>

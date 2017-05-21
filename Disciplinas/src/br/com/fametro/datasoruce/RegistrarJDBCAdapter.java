@@ -11,6 +11,7 @@ public class RegistrarJDBCAdapter {
 	private DataSource dataSource;
 	private PreparedStatement preparedStatement;
 	public RegistrarJDBCAdapter() {
+		preparedStatement = null;
 	}
 	public RegistrarJDBCAdapter(DataSource dataSource) {
 		this.dataSource = dataSource;
