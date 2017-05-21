@@ -10,7 +10,8 @@ public class RegistrarJDBCAdapter {
 	
 	private DataSource dataSource;
 	private PreparedStatement preparedStatement;
-	
+	public RegistrarJDBCAdapter() {
+	}
 	public RegistrarJDBCAdapter(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}

@@ -1,32 +1,43 @@
 package br.com.fametro.disciplinas.dao;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import br.com.fametro.datasoruce.RegistrarJDBCAdapter;
 import br.com.fametro.disciplinas.bean.Aluno;
 import br.com.fametro.disciplinas.bean.Usuario;
 import br.com.fametro.disciplinas.exception.ServerExceptionDaoDisciplina;
 
 public class UsuarioDAO {
 	private static final Map<Long, Usuario> USUARIO = new HashMap<>();
-
-	static {
-		gerarUsuario(new Usuario(new Aluno(1, "matricula", "123"), "senha"));
-		
-	}
+	private RegistrarJDBCAdapter registrarJDBCAdapter;
+	private final String insertUsuarioSql = "INSERT INTO TB_USUARIO (USUARIO_ID, USUARIO_FKPESSOA, USUARIO_SENHA) VALUE(?,?,?)";
 
 	public UsuarioDAO() {
-
+		gerarUsuario(new Usuario(new Aluno(1, "matricula", "123"), "senha"));
 	}
 
 	public void add(Usuario usuario) {
 		gerarUsuario(usuario);
 	}
 
-	private static void gerarUsuario(Usuario usuario) {
+	private void gerarUsuario(Usuario usuario) {
+		try {
+			PreparedStatement insert = registrarJDBCAdapter.preparedStatement(insertUsuarioSql);
+			insert.setLong(4, usuario.getId());
+			insert.setLong(4, usuario.getPessoa().getId());
+			insert.setString(4, usuario.getSenha());
+			insert.execute();
+			insert.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		long id = USUARIO.size() + 1L;
 		usuario.setId(id);
 		USUARIO.put(id, usuario);
@@ -55,12 +66,14 @@ public class UsuarioDAO {
 			throw new ServerExceptionDaoDisciplina("Preencher campos");
 		} else {
 			for (Usuario usuarioDaLista : USUARIO.values()) {
-				if (usuarioDaLista.getPessoa().getMatricula().equals(matricula) && usuarioDaLista.getSenha().equals(senha)){
+				if (usuarioDaLista.getPessoa().getMatricula().equals(matricula)
+						&& usuarioDaLista.getSenha().equals(senha)) {
 					return true;
-					}				
 				}
+			}
 			throw new ServerExceptionDaoDisciplina("Usuario nao cadastrado");
 		}
 
 	}
+
 }

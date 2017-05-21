@@ -10,7 +10,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
     <link href="resources/css/bootstrap.css" rel="stylesheet">
 <!--     <link href="resources/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="resources/css/bootstrap-theme.css" rel="stylesheet">
@@ -29,6 +28,7 @@
 
 <body>
 <div class="bs-example">
+<form action="">
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="container">
@@ -43,25 +43,31 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="./menu.jsp">Home</a></li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Controle de Pessoa<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Inbox</a></li>
-                            <li><a href="#">Drafts</a></li>
-                            <li><a href="#">Sent Items</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Trash</a></li>
+                            <li><a href="./pesquisarUsuario.jsp">Funcionario</a></li>
+                            <li><a href="./pesquisarAluno.jsp">Aluno</a></li>
+                        </ul>
+                    </li>
+                    
+                     <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Controle de Disciplina<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./pesquisarUsuario.jsp">Funcionario</a></li>
+                            <li><a href="./pesquisarAluno.jsp">Aluno</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/disciplina/index.jsp">Sair</a></li>
+               
+                    <li><a href="./index.jsp">Sair</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
     </nav>
+    </form>
 </div>
     <footer class="panel-footer rodape">
         Fametro &copy
