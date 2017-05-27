@@ -1,4 +1,4 @@
-package br.com.fametro.disciplinas.controle;
+package br.com.fametro.disciplinas.control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
