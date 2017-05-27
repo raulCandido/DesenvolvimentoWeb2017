@@ -14,24 +14,27 @@
 </head>
 <body>
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">Cadastro de usuario</h3>
-		<form action="">
+		<h3 class="page-header">Cadastro de Usuario</h3>
+		<form action="CadastrarUsuarioServelet" method="post">
+		<c:out value="${msg}"></c:out>
 			<div class="row">
-				<div class="form-group col-md-4">
-					<label for="idusuario">Id usuario</label>
-					<input type="number"
-						class="form-control" id="idUsuario">
-				</div>
 
 				<div class="form-group col-md-4">
-					<label for="idpessoa">id pessoa</label>
-					<input type="number"
-						class="form-control" id="idpessoa">
+					<label for="idpessoa">Nome</label> <input type="text"
+						class="form-control" id=" nome" name="nome" required>
 				</div>
 
+				<div class="form-group col-md-2">
+					<label for="senha">Senha</label> <input type="text"
+						class="form-control" id="senha" name="senha" required>
+				</div>
 				<div class="form-group col-md-4">
-					<label for="senha">senha</label>
-					<input type="text" class="form-control" id="senha">
+					<label for="senha">Email</label> <input type="email"
+						class="form-control" id="email" name="email" required>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="senha">Matricula</label> <input type="text"
+						class="form-control" id="matricula" name="matricula" required>
 				</div>
 			</div>
 			<hr />
