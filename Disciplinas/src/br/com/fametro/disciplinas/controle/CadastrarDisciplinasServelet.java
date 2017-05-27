@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 import br.com.fametro.Dao.DisciplinaDao;
 import br.com.fametro.Dao.UsuarioDAO;
 import br.com.fametro.disciplina.util.GeradorId;
+import br.com.fametro.disciplinas.exception.DisciplinaJaExiste;
 import br.com.fametro.disciplinas.exception.FalhaNoSistema;
 import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
 import br.com.fametro.disciplinas.model.Disciplina;
@@ -61,20 +62,16 @@ public class CadastrarDisciplinasServelet extends HttpServlet {
 			try {
 				try {
 					disciplinaDao.addDisciplina(disciplina);
-					getServletContext().setAttribute("msg", "Cadastro com sucesso");
-					getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
-				} catch (SQLException e) {
-					getServletContext().setAttribute("msg", e.getMessage());
-					getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
-					e.printStackTrace();
+					getServletContext().setAttribute("msg", "Cadastro da disciplina: "+disciplina.getNomeDisciplina()+" efetuado com sucesso");
+					getServletContext().getRequestDispatcher("/cadastroDisciplina.jsp").forward(request, response);
 				} catch (FalhaNoSistema e) {
 					getServletContext().setAttribute("msg", e.getMessage());
-					getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+					getServletContext().getRequestDispatcher("/cadastroDisciplina.jsp").forward(request, response);
 					e.printStackTrace();
 				}
-			} catch (UsuarioJaExiste e) {
+			} catch (DisciplinaJaExiste e) {
 				getServletContext().setAttribute("msg", e.getMessage());
-				getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+				getServletContext().getRequestDispatcher("/cadastroDisciplina.jsp").forward(request, response);
 			}
 		}
 
@@ -91,7 +88,9 @@ public class CadastrarDisciplinasServelet extends HttpServlet {
 
 	private boolean isvalido(Disciplina disciplina) {
 		boolean erro = true;
-		if (disciplina.getNomeDisciplina()==null || disciplina.getNomeDisciplina()=="" || disciplina.getCargaHoraria()==0 || disciplina.getEmenta()==null || disciplina.getEmenta()=="") {
+		if (disciplina.getNomeDisciplina() == null || disciplina.getNomeDisciplina() == ""
+				|| disciplina.getCargaHoraria() == 0 || disciplina.getEmenta() == null
+				|| disciplina.getEmenta() == "") {
 			erro = false;
 			return erro;
 		}

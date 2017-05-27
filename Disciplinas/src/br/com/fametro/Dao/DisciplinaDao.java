@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import br.com.fametro.disciplinas.exception.DisciplinaJaExiste;
 import br.com.fametro.disciplinas.exception.FalhaNoSistema;
 import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
 import br.com.fametro.disciplinas.model.Disciplina;
@@ -17,7 +18,7 @@ public class DisciplinaDao extends RegistrarJDBCAdapter {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void addDisciplina(Disciplina disciplina) {
+	public void addDisciplina(Disciplina disciplina) throws DisciplinaJaExiste, FalhaNoSistema {
 		Connection connection = null;
 		try {
 			connection = dataSource.getConnection();
@@ -33,15 +34,14 @@ public class DisciplinaDao extends RegistrarJDBCAdapter {
 
 			} catch (SQLException e) {
 				e.printStackTrace();
-				throw new UsuarioJaExiste(usuario.getMatricula());
+				throw new DisciplinaJaExiste(disciplina.getNomeDisciplina());
 			}
 
 		} catch (SQLException eOuter) {
 			eOuter.printStackTrace();
 			throw new FalhaNoSistema();
 		}
-		
+
 	}
-	
 
 }

@@ -15,23 +15,27 @@
 <body>
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Pesquisar Disciplina</h3>
-		<form action="CadastrarDisciplinas">
+		<form action="CadastrarDisciplinas" method="post">
+		<div class="alert alert-info alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+				<c:out value="${msg}"></c:out>
+			</div>
 			<div class="row">
 
 				<div class="form-group col-md-4">
-					<label for="nomeDisciplina">Nome da disciplina</label> <input
-						type="text" class="form-control" id="nomeDisciplina">
+					<label for="nomeDisciplina">Nome da disciplina</label>
+					 <input type="text" class="form-control" id="nomeDisciplina" name="nomeDisciplina" required>
 				</div>
 
 
 				<div class="form-group col-md-4">
 					<label for="ementa">Ementa</label> <input type="text"
-						class="form-control" id="ementa">
+						class="form-control" id="ementa" name="ementa" required>
 				</div>
 
 				<div class="form-group col-md-1">
 					<label for="cargaHoraria">Carga Horaria</label> <input
-						type="number" class="form-control" id="cargaHoraria">
+						type="number" class="form-control" id="cargaHoraria" name="cargaHoraria" required>
 				</div>
 			</div>
 			<hr />
