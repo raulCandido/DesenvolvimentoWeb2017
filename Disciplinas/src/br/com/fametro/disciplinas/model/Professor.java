@@ -4,8 +4,9 @@ import java.util.List;
 
 public class Professor extends Usuario {
 
-	public Professor(String senha, String nome, String email, String matricula, int id) {
+	public Professor(String senha, String nome, String email, String matricula, int id, String formacao) {
 		super(senha, nome, email, matricula, id);
+		setFormacao(formacao);
 	}
 
 	private List<Disciplina> disciplina;

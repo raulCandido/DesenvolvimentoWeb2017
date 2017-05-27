@@ -2,9 +2,9 @@ package br.com.fametro.disciplinas.model;
 
 public class Funcionario extends Usuario {
 
-	public Funcionario(String senha, String nome, String email, String matricula, int id) {
+	public Funcionario(String senha, String nome, String email, String matricula, int id, String cargo) {
 		super(senha, nome, email, matricula, id);
-		// TODO Auto-generated constructor stub
+		setCargo(cargo);
 	}
 
 	private String cargo;
