@@ -4,13 +4,18 @@ public class Disciplina {
 
 	private int id;
 	private String nomeDisciplina;
-	private String CargaHoraria;
+	private int CargaHoraria;
 	private String Material;
 	private String Livros;
 	private String Ementa;
 
 	public int getId() {
 		return id;
+	}
+	public Disciplina(String nomeDisciplina, int cargaHoraria, String ementa) {
+		setNomeDisciplina(nomeDisciplina);
+		setCargaHoraria(cargaHoraria);
+		setEmenta(ementa);
 	}
 
 	public void setId(int id) {
@@ -23,14 +28,6 @@ public class Disciplina {
 
 	public void setDisciplina(String disciplina) {
 		this.nomeDisciplina = disciplina;
-	}
-
-	public String getCargaHoraria() {
-		return CargaHoraria;
-	}
-
-	public void setCargaHoraria(String cargaHoraria) {
-		CargaHoraria = cargaHoraria;
 	}
 
 	public String getMaterial() {
@@ -55,6 +52,22 @@ public class Disciplina {
 
 	public void setEmenta(String ementa) {
 		Ementa = ementa;
+	}
+
+	public String getNomeDisciplina() {
+		return nomeDisciplina;
+	}
+
+	public void setNomeDisciplina(String nomeDisciplina) {
+		this.nomeDisciplina = nomeDisciplina;
+	}
+
+	public int getCargaHoraria() {
+		return CargaHoraria;
+	}
+
+	public void setCargaHoraria(int cargaHoraria) {
+		CargaHoraria = cargaHoraria;
 	}
 
 }

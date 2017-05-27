@@ -2,16 +2,12 @@ package br.com.fametro.disciplinas.model;
 
 public class Funcionario extends Usuario {
 
-	private String ctps;
+	public Funcionario(String senha, String nome, String email, String matricula, int id) {
+		super(senha, nome, email, matricula, id);
+		// TODO Auto-generated constructor stub
+	}
+
 	private String cargo;
-
-	public String getCtps() {
-		return ctps;
-	}
-
-	public void setCtps(String ctps) {
-		this.ctps = ctps;
-	}
 
 	public String getCargo() {
 		return cargo;

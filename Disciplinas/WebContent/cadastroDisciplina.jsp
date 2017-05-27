@@ -15,30 +15,30 @@
 <body>
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Pesquisar Disciplina</h3>
-		<form action="">
+		<form action="CadastrarDisciplinas">
 			<div class="row">
-				<div class="form-group col-md-4">
-					<label for="idDisciplina">Código</label>
-					<input type="number"
-						class="form-control" id="idUsuario">
-				</div>
 
 				<div class="form-group col-md-4">
-					<label for="idpessoa">id pessoa</label>
-					<input type="number"
-						class="form-control" id="idpessoa">
+					<label for="nomeDisciplina">Nome da disciplina</label> <input
+						type="text" class="form-control" id="nomeDisciplina">
 				</div>
 
+
 				<div class="form-group col-md-4">
-					<label for="senha">senha</label>
-					<input type="text" class="form-control" id="senha">
+					<label for="ementa">Ementa</label> <input type="text"
+						class="form-control" id="ementa">
+				</div>
+
+				<div class="form-group col-md-1">
+					<label for="cargaHoraria">Carga Horaria</label> <input
+						type="number" class="form-control" id="cargaHoraria">
 				</div>
 			</div>
 			<hr />
 			<div id="actions" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary">Salvar</button>
-					<a href="index.html" class="btn btn-default">Cancelar</a>
+					<a href="index.html" class="btn btn-default">Limpar</a>
 				</div>
 			</div>
 		</form>

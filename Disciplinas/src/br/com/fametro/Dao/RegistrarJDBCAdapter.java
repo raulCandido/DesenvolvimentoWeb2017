@@ -1,4 +1,6 @@
-package br.com.fametro.datasource;
+package br.com.fametro.Dao;
+
+import java.sql.Connection;
 
 import javax.sql.DataSource;
 

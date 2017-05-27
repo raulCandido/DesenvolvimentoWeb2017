@@ -1,24 +1,30 @@
 package br.com.fametro.disciplinas.model;
 
+import java.util.List;
+
 public class Professor extends Usuario {
 
-	private String ctps;
-	private String disciplina;
-
-	public String getCtps() {
-		return ctps;
+	public Professor(String senha, String nome, String email, String matricula, int id) {
+		super(senha, nome, email, matricula, id);
 	}
 
-	public void setCtps(String ctps) {
-		this.ctps = ctps;
-	}
+	private List<Disciplina> disciplina;
+	private String formacao;
 
-	public String getDisciplina() {
+	public List<Disciplina> getDisciplina() {
 		return disciplina;
 	}
 
-	public void setDisciplina(String disciplina) {
+	public void setDisciplina(List<Disciplina> disciplina) {
 		this.disciplina = disciplina;
+	}
+
+	public String getFormacao() {
+		return formacao;
+	}
+
+	public void setFormacao(String formacao) {
+		this.formacao = formacao;
 	}
 
 }

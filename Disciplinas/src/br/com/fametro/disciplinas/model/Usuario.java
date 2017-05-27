@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import br.com.fametro.datasource.RegistrarJDBCAdapter;
+import br.com.fametro.Dao.RegistrarJDBCAdapter;
 import br.com.fametro.disciplinas.exception.FalhaNoSistema;
 import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
 

@@ -2,60 +2,100 @@ package br.com.fametro.disciplinas.controle;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
+import br.com.fametro.Dao.DisciplinaDao;
+import br.com.fametro.Dao.UsuarioDAO;
+import br.com.fametro.disciplina.util.GeradorId;
+import br.com.fametro.disciplinas.exception.FalhaNoSistema;
+import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
+import br.com.fametro.disciplinas.model.Disciplina;
+import br.com.fametro.disciplinas.model.Usuario;
 
 @WebServlet("/CadastrarDisciplinas")
 public class CadastrarDisciplinasServelet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    public CadastrarDisciplinasServelet() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		
-		out.append("<html>");
-		out.append("	<head><title>Cadastro de Disciplinas</title>");
-		out.append("		<link rel='stylesheet' type='text/css' href='estilo.css'>");
-		out.append(" 	</head>");
-		out.append("	<body>");
-		out.append("	<form action='SalvarAluno'>");
-		out.append("	<table width=100%>");
-		out.append("		<caption>Cadastro de Disciplinas</caption>");
-		out.append("		<tr><th colspan=3>Dados da Disciplina</th></tr>");
-		out.append("		<tr>"
-				+ "<td colspan=2><fieldset><legend>Descrição</legend><input type='text' size=80></fieldset></td>"
-				+ "<td><fieldset><legend>Carga Horária</legend><input type='text'></fieldset></td>"
-				+ "</tr>");
-		out.append("		<tr>"
-				+ "<td colspan=3><fieldset><legend>Meterial</legend><input type='text' size=80></fieldset></td>"
-				+ "</tr>");
-		out.append("		<tr>"
-				+ "<td colspan=3><fieldset><legend>Livros</legend><input type='text' size=80></fieldset></td>"
-				+ "</tr>");
-		out.append("		<tr>"
-				+ "<td colspan=3><fieldset><legend>Ementa</legend><input type='text' size=80></fieldset></td>"
-				+ "</tr>");
-		out.append("        <tr><th colspan=3 style='text-align: center;'>"
-				+ "<input type='submit' name='Salvar' value='Salvar'>"
-				+ "<a href='menu.jsp'><input type='button' value='Voltar'></a></th></tr>");
-		out.append("	</table>");
-		out.append("	</form>");
-		out.append("	</body>");
-		out.append("</html>");
+	private static final long serialVersionUID = 1L;
+	@Resource(name = "jdbc/RegistrarDB")
+	public DataSource dataSource;
+	private DisciplinaDao disciplinaDao;
+
+	@Override
+	public void init() throws ServletException {
+		disciplinaDao = new DisciplinaDao(dataSource);
+	}
+
+	public CadastrarDisciplinasServelet() {
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		processRequest(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+	private void processRequest(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Disciplina disciplina = criarDisciplina(request);
+		if (!isvalido(disciplina)) {
+			getServletContext().setAttribute("msg", "Obrigatorio preencher todos os campos");
+			getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+		} else {
+			try {
+				try {
+					disciplinaDao.addDisciplina(disciplina);
+					getServletContext().setAttribute("msg", "Cadastro com sucesso");
+					getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+				} catch (SQLException e) {
+					getServletContext().setAttribute("msg", e.getMessage());
+					getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+					e.printStackTrace();
+				} catch (FalhaNoSistema e) {
+					getServletContext().setAttribute("msg", e.getMessage());
+					getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+					e.printStackTrace();
+				}
+			} catch (UsuarioJaExiste e) {
+				getServletContext().setAttribute("msg", e.getMessage());
+				getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
+			}
+		}
+
+	}
+
+	private Disciplina criarDisciplina(HttpServletRequest request) {
+		Disciplina disciplina = null;
+		String nomeDisciplina = request.getParameter("nomeDisciplina");
+		int cargaHoraria = Integer.parseInt(request.getParameter("cargaHoraria"));
+		String ementa = request.getParameter("ementa");
+		disciplina = new Disciplina(nomeDisciplina, cargaHoraria, ementa);
+		return disciplina;
+	}
+
+	private boolean isvalido(Disciplina disciplina) {
+		boolean erro = true;
+		if (disciplina.getNomeDisciplina()==null || disciplina.getNomeDisciplina()=="" || disciplina.getCargaHoraria()==0 || disciplina.getEmenta()==null || disciplina.getEmenta()=="") {
+			erro = false;
+			return erro;
+		}
+		return erro;
 	}
 
 }

@@ -1,4 +1,4 @@
-package br.com.fametro.datasource;
+package br.com.fametro.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,26 +8,26 @@ import javax.sql.DataSource;
 
 import br.com.fametro.disciplinas.exception.FalhaNoSistema;
 import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
-import br.com.fametro.disciplinas.model.Usuario;
+import br.com.fametro.disciplinas.model.Disciplina;
 
-public class UsuarioDAO extends RegistrarJDBCAdapter {
+public class DisciplinaDao extends RegistrarJDBCAdapter {
 
-	public UsuarioDAO(DataSource dataSource) {
+	public DisciplinaDao(DataSource dataSource) {
 		super(dataSource);
+		// TODO Auto-generated constructor stub
 	}
 
-	public void addUsuario(Usuario usuario) throws SQLException, UsuarioJaExiste, FalhaNoSistema {
+	public void addDisciplina(Disciplina disciplina) {
 		Connection connection = null;
 		try {
-
-			String sqlInsert = "INSERT INTO TB_USUARIO (USUARIO_MATRICULA, USUARIO_EMAIL, USUARIO_NOME, USUARIO_SENHA) VALUES(?,?,?,?)";
+			connection = dataSource.getConnection();
+			String sqlInsert = "INSERT INTO TB_DISCIPLINA (DISCIPLINA_NOME, DISCIPLINA_CARGA_HORARIA,DISCIPLINA_EMENTA ) VALUES(?,?,?)";
 			PreparedStatement insert = connection.prepareStatement(sqlInsert);
 
 			try {
-				insert.setString(1, usuario.getMatricula());
-				insert.setString(2, usuario.getEmail());
-				insert.setString(3, usuario.getNome());
-				insert.setString(4, usuario.getSenha());
+				insert.setString(1, disciplina.getNomeDisciplina());
+				insert.setInt(2, disciplina.getCargaHoraria());
+				insert.setString(3, disciplina.getEmenta());
 				insert.execute();
 				insert.close();
 
@@ -40,6 +40,8 @@ public class UsuarioDAO extends RegistrarJDBCAdapter {
 			eOuter.printStackTrace();
 			throw new FalhaNoSistema();
 		}
+		
 	}
+	
 
 }

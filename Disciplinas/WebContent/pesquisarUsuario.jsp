@@ -37,8 +37,8 @@
 			<hr />
 			<div id="actions" class="row">
 				<div class="col-md-12">
-					<button type="submit" class="btn btn-primary">Salvar</button>
-					<a href="index.html" class="btn btn-default">Cancelar</a>
+					<button type="submit" class="btn btn-primary">Pesquisar</button>
+					<a href="index.html" class="btn btn-default">Limpar</a>
 				</div>
 			</div>
 		</form>
