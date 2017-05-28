@@ -25,7 +25,7 @@ public class FuncionarioDao extends RegistrarJDBCAdapter {
 			connection = dataSource.getConnection();
 			
 			
-			String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_CARGO) VALUES(?,?,?,?,?)";
+			String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_CARGO, USURUARIO_FUNCIONARIO) VALUES(?,?,?,?,?,?)";
 
 			PreparedStatement insert = connection.prepareStatement(sqlInsert);
 
@@ -35,6 +35,7 @@ public class FuncionarioDao extends RegistrarJDBCAdapter {
 				insert.setString(3, funcionario.getMatricula());
 				insert.setString(4, funcionario.getSenha());
 				insert.setString(5, funcionario.getCargo());
+				insert.setBoolean(6, true);
 				insert.execute();
 				insert.close();
 

@@ -41,7 +41,7 @@
 						class="form-control" id="matricula" name="matricula" required>
 				</div>
 				<div class="form-group col-md-3">
-					<label for="formacao">Formacao</label> <input type="number"
+					<label for="formacao">Formacao</label> <input type="text"
 						class="form-control" id="formacao" name="formacao" required>
 				</div>
 			</div>

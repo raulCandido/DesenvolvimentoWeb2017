@@ -24,7 +24,7 @@ public class AlunoDao extends RegistrarJDBCAdapter {
 			connection = dataSource.getConnection();
 			
 			
-			String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_PERIODO) VALUES(?,?,?,?,?)";
+			String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_PERIODO, USURUARIO_ALUNO) VALUES(?,?,?,?,?,?)";
 
 			PreparedStatement insert = connection.prepareStatement(sqlInsert);
 
@@ -34,6 +34,7 @@ public class AlunoDao extends RegistrarJDBCAdapter {
 				insert.setString(3, aluno.getMatricula());
 				insert.setString(4, aluno.getSenha());
 				insert.setString(5, aluno.getPeriodo());
+				insert.setBoolean(6, true);
 				insert.execute();
 				insert.close();
 

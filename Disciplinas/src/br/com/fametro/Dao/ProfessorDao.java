@@ -23,7 +23,7 @@ public class ProfessorDao extends RegistrarJDBCAdapter {
 			connection = dataSource.getConnection();
 			
 			
-			String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_FORMACAO) VALUES(?,?,?,?,?)";
+			String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_FORMACAO, USURUARIO_PROFESSOR ) VALUES(?,?,?,?,?,?)";
 
 			PreparedStatement insert = connection.prepareStatement(sqlInsert);
 
@@ -33,6 +33,7 @@ public class ProfessorDao extends RegistrarJDBCAdapter {
 				insert.setString(3, professor.getMatricula());
 				insert.setString(4, professor.getSenha());
 				insert.setString(5, professor.getFormacao());
+				insert.setBoolean(6, true);
 				insert.execute();
 				insert.close();
 

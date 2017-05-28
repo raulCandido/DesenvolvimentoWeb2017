@@ -1,13 +1,20 @@
 package br.com.fametro.disciplinas.model;
 
-import java.util.List;
-
 public class Turma {
 
 	private int id;
 	private int Ano;
 	private int Semestre;
 	private String diaDaSemana;
+	private String obersevacao;
+
+	public String getObersevacao() {
+		return obersevacao;
+	}
+
+	public void setObersevacao(String obersevacao) {
+		this.obersevacao = obersevacao;
+	}
 
 	public int getId() {
 		return id;

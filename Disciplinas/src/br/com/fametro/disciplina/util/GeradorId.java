@@ -10,4 +10,7 @@ public final class GeradorId {
 		id++;
 		return id;
 	}
+	public static int gerarMatricula(){
+		return (int)  (Math.random()*999999999);
+	}
 }

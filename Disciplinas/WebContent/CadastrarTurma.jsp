@@ -40,8 +40,8 @@
 			</div>
 			<div class="row">
 				<div class="form-group col-md-5">
-					<label for="diaSemana">Observacao</label>
-						<textarea rows="5" class="form-control" id="diaSemana" name="diaSemana" required></textarea>
+					<label for="observacao">Observacao</label>
+						<textarea rows="5" class="form-control" id="observacao" name="observacao" required></textarea>
 				</div>
 			</div>
 			<hr />
