@@ -17,23 +17,16 @@
 		<h3 class="page-header">Cadastrar Turma</h3>
 
 		<form action="CadastrarTurmaServelet" method="post">
-			<div class="alert alert-info alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-				<c:out value="${msg}"></c:out>
-			</div>
+			<c:out value="${msg}"></c:out>
 			<div class="row">
-
 				<div class="form-group col-md-1">
 					<label for="ano">Ano da turma</label> <input type="number"
 						class="form-control" id="ano" name="ano" maxlength="4" required>
 				</div>
-
-
 				<div class="form-group col-md-1">
 					<label for="semestre">Semestre</label> <input type="number"
 						class="form-control" id="semestre" name="semestre" required>
 				</div>
-
 				<div class="form-group col-md-3">
 					<label for="diaSemana">Dia da semana</label> <input type="text"
 						class="form-control" id="diaSemana" name="diaSemana" required>
@@ -50,7 +43,7 @@
 			<div id="actions" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary">Salvar</button>
-					<a href="index.html" class="btn btn-default">Limpar</a>
+					<a href="./CadastrarTurma.jsp" class="btn btn-default">Limpar</a>
 				</div>
 			</div>
 		</form>

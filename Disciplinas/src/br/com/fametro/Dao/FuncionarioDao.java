@@ -18,7 +18,7 @@ import br.com.fametro.disciplinas.model.Funcionario;
 public class FuncionarioDao extends RegistrarJDBCAdapter {
 
 	private String selectTodos = "SELECT * FROM TB_USUARIO";
-	private String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_CARGO, USURUARIO_FUNCIONARIO) VALUES(?,?,?,?,?,?)";
+	private String sqlInsert = "INSERT INTO TB_USUARIO(USUARIO_NOME, USUARIO_EMAIL, USUARIO_MATRICULA, USUARIO_SENHA, USUARIO_CARGO, USUARIO_FUNCIONARIO) VALUES(?,?,?,?,?,?)";
 
 	public FuncionarioDao(DataSource dataSource) {
 		super(dataSource);

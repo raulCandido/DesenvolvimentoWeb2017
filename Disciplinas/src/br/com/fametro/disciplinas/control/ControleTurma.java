@@ -50,9 +50,9 @@ public class ControleTurma extends HttpServlet {
 	private void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		if (controleRedirect(request) == true) {
-			response.sendRedirect("./CadastrarUsuario.jsp");
+			response.sendRedirect("./CadastrarTurma.jsp");
 		} else {
-			response.sendRedirect("./pesquisarUsuario.jsp");
+			response.sendRedirect("./pesquisarTurma.jsp");
 		}
 	}
 

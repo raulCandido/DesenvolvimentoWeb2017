@@ -54,8 +54,12 @@ public class CadastrarAlunoServelet extends HttpServlet {
 		} else {
 			try {
 				try {
+					String msg = null;
 					alunoDao.addAluno(aluno);
-					getServletContext().setAttribute("msg", "Registro Salvo com sucesso");
+					if(!aluno.getNome().equals("")||!aluno.getNome().equals(null)){
+						msg = "Aluno de nome: "+aluno.getNome()+" Cadastrado com sucesso";
+					}
+					getServletContext().setAttribute("msg", msg);
 					getServletContext().getRequestDispatcher("/CadastrarAluno.jsp").forward(req, resp);
 				} catch (FalhaNoSistema e) {
 					getServletContext().setAttribute("msg", e.getMessage());

@@ -15,11 +15,9 @@
 <body>
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Cadastro de funcionario</h3>
+		<c:out value="${msg}" default="false"></c:out>
 		<form action="CadastrarFuncionarioServelet" method="post">
-		
-				<c:out value="${msg}"></c:out>
-			
-
+				
 			<div class="row">
 
 				<div class="form-group col-md-4">
@@ -40,15 +38,16 @@
 						class="form-control" id="matricula" name="matricula" required>
 				</div>
 				<div class="form-group col-md-3">
-					<label for="cargo">Cargo</label> <input type="number"
+					<label for="cargo">Cargo</label> <input type="text"
 						class="form-control" id="cargo" name="cargo" required>
 				</div>
 			</div>
 			<hr />
+			
 			<div id="actions" class="row">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary">Salvar</button>
-					<a href="index.html" class="btn btn-default">Cancelar</a>
+					<a href="./CadastrarFuncionario.jsp" class="btn btn-default">Limpar</a>
 				</div>
 			</div>
 		</form>
