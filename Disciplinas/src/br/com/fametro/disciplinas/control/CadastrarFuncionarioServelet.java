@@ -11,26 +11,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import br.com.fametro.Dao.FuncionarioDao;
 import br.com.fametro.Dao.ProfessorDao;
 import br.com.fametro.disciplina.util.GeradorId;
 import br.com.fametro.disciplinas.exception.FalhaNoSistema;
+import br.com.fametro.disciplinas.exception.FuncionarioJaExiste;
 import br.com.fametro.disciplinas.exception.ProfessorJaExiste;
-import br.com.fametro.disciplinas.model.Professor;
+import br.com.fametro.disciplinas.model.Funcionario;
+import br.com.fametro.disciplinas.model.Funcionario;
 
 /**
  * Servlet implementation class CadastrarFuncionario
  */
-@WebServlet("/CadastrarFuncionario")
+@WebServlet("/CadastrarFuncionarioServelet")
 public class CadastrarFuncionarioServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Resource(name = "jdbc/RegistrarDB")
 	public DataSource dataSource;
-	private ProfessorDao professorDao;
+	private FuncionarioDao funcionarioDao;
 
 	@Override
 	public void init() throws ServletException {
-		professorDao = new ProfessorDao(dataSource);
+		funcionarioDao = new FuncionarioDao(dataSource);
 	}
 
 	@Override
@@ -44,19 +47,19 @@ public class CadastrarFuncionarioServelet extends HttpServlet {
 	}
 
 	private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Professor professor = criarProfessor(req);
-		if (!isvalido(professor)) {
+		Funcionario funcionario = criarFuncionario(req);
+		if (!isvalido(funcionario)) {
 			getServletContext().setAttribute("msg", "Obrigatorio preencher todos os campos");
 			getServletContext().getRequestDispatcher("/CadastrarAluno.jsp").forward(req, resp);
 		} else {
 			try {
-				professorDao.addProfessor(professor);
+				funcionarioDao.addFuncionario(funcionario);
 				getServletContext().setAttribute("msg", "Registro Salvo com sucesso");
 				getServletContext().getRequestDispatcher("/CadastrarProfessor.jsp").forward(req, resp);
 			} catch (FalhaNoSistema e) {
 				getServletContext().setAttribute("msg", e.getMessage());
 				getServletContext().getRequestDispatcher("/CadastrarProfessor.jsp").forward(req, resp);
-			} catch (ProfessorJaExiste e) {
+			} catch (FuncionarioJaExiste e) {
 				getServletContext().setAttribute("msg", e.getMessage());
 				getServletContext().getRequestDispatcher("/CadastrarProfessor.jsp").forward(req, resp);
 			}
@@ -65,23 +68,23 @@ public class CadastrarFuncionarioServelet extends HttpServlet {
 
 	}
 
-	private Professor criarProfessor(HttpServletRequest request) {
-		Professor professor = null;
+	private Funcionario criarFuncionario(HttpServletRequest request) {
+		Funcionario funcionario = null;
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
 		String matricula = request.getParameter("matricula");
-		String formacao = request.getParameter("formacao");
-		professor = new Professor(senha, nome, email, matricula, GeradorId.gerarId(), formacao);
-		return professor;
+		String cargo = request.getParameter("cargo");
+		funcionario = new Funcionario(senha, nome, email, matricula, GeradorId.gerarId(), cargo);
+		return funcionario;
 	}
 
-	private boolean isvalido(Professor professor) {
+	private boolean isvalido(Funcionario funcionario) {
 		boolean erro = true;
-		if (professor.getNome() == "" || professor.getNome() == null || professor.getSenha() == ""
-				|| professor.getSenha() == null || professor.getEmail() == "" || professor.getEmail() == null
-				|| professor.getMatricula() == "" || professor.getMatricula() == null || professor.getFormacao() == null
-				|| professor.getFormacao() == "") {
+		if (funcionario.getNome() == "" || funcionario.getNome() == null || funcionario.getSenha() == ""
+				|| funcionario.getSenha() == null || funcionario.getEmail() == "" || funcionario.getEmail() == null
+				|| funcionario.getMatricula() == "" || funcionario.getMatricula() == null
+				|| funcionario.getCargo() == null || funcionario.getCargo() == "") {
 			erro = false;
 			return erro;
 		}
