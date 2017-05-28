@@ -31,18 +31,16 @@
 								<th>Codigo turma</th>
 								<th>Ano</th>
 								<th>Semestre</th>
-								<th>Dia da semana</th>
 								<th>Observacao</th>
 							</tr>
 						</thead>
 						<tbody>
-						<jsp:useBean id="turma" class="br.com.fametro.disciplinas.control.VisualizarTurma"/>
-							<c:forEach items="${turma.listaTurma}" var="itens">
+							<c:forEach items="${listaTurma}" var="itens">
 								<tr>
 									<td><c:out value="${itens.id}"></c:out></td>
-									<td>${itens.Semestre}</td>
-									<td>${itens.diaDaSemana}</td>
-									<td>${itens.obersevacao}</td>
+									<td><c:out value="${itens.ano}"></c:out></td>
+									<td><c:out value="${itens.semestre}"></c:out></td>
+									<td><c:out value="${itens.obersevacao}"></c:out></td>
 								</tr>
 							</c:forEach>
 						</tbody>

@@ -41,6 +41,7 @@ public class VisualizarTurma extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
+		request.setAttribute("listaTurma", listaTurma);
 		getServletContext().getRequestDispatcher("/pesquisarTurma.jsp").forward(request, response);
 	}
 
