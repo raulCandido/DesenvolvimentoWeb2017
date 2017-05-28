@@ -14,6 +14,16 @@ public class Turma {
 		setDiaDaSemana(diaDaSemana);
 		setObersevacao(observacao);
 	}
+
+	public Turma() {
+	}
+
+	public Turma(int id, String observacao, String diaDaSemana) {
+		setId(id);
+		setObersevacao(diaDaSemana);
+		setDiaDaSemana(diaDaSemana);
+	}
+
 	public String getObersevacao() {
 		return obersevacao;
 	}

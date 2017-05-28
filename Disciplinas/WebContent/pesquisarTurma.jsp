@@ -15,58 +15,45 @@
 <body>
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Pesquisar Turma</h3>
-		<form action="">
+		<form action="VisualizarTurma" method="post">
 			<div class="row">
-				<div class="form-group col-md-4">
-					<label for="idusuario">Id usuario</label> <input type="number"
-						class="form-control" id="idUsuario">
+				<div class="form-group col-md-1">
+					<label for="codTurma">Codigo Turma</label> <input type="number"
+						class="form-control" id="codTurma" name="codTurma">
 				</div>
 
-				<div class="form-group col-md-4">
-					<label for="idpessoa">id pessoa</label> <input type="number"
-						class="form-control" id="idpessoa">
-				</div>
-
-				<div class="form-group col-md-4">
-					<label for="senha">senha</label> <input type="text"
-						class="form-control" id="senha">
-				</div>
 			</div>
 			<div id="list" class="row">
-
 				<div class="table-responsive col-md-13">
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Código</th>
-								<th>Nome</th>
-								<th>Cargo</th>
-								<th>Matricula</th>
-								<th>Email</th>
-								<th class="actions">Ações</th>
+								<th>Codigo turma</th>
+								<th>Ano</th>
+								<th>Semestre</th>
+								<th>Dia da semana</th>
+								<th>Observacao</th>
 							</tr>
 						</thead>
 						<tbody>
-
-							<tr>
-								<td>01</td>
-								<td>Joao da Silva</td>
-								<td>Secretaria</td>
-								<td>123212</td>
-								<td>joao.silva@gmail.com</td>
-								<td class="actions"><a class="btn btn-success btn-xs"
-									href="view.html">Visualizar</a> <a
-									class="btn btn-warning btn-xs" href="edit.html">Editar</a></td>
-							</tr>
+						<jsp:useBean id="turma" class="br.com.fametro.disciplinas.control.VisualizarTurma"/>
+							<c:forEach items="${turma.listaTurma}" var="itens">
+								<tr>
+									<td><c:out value="${itens.id}"></c:out></td>
+									<td>${itens.Semestre}</td>
+									<td>${itens.diaDaSemana}</td>
+									<td>${itens.obersevacao}</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 			</div>
+			<button type="submit" class="btn btn-primary">Pesquisar</button>
 		</form>
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<button type="submit" class="btn btn-primary">Pesquisar</button>
 				<form action="ControleTurma">
 					<button type="submit" class="btn btn-primary" name="novo">Novo</button>
 					<button type="submit" class="btn btn-default" name="limpar">Limpar</button>
