@@ -47,7 +47,7 @@
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Controle de Pessoa<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./pesquisarFuncionario.jsp">Funcionario</a></li>
+                            <li><a href="./ControleFuncionario.jsp">Funcionario</a></li>
                             <li><a href="./pesquisarProfessor.jsp">Professor</a></li>
                             <li><a href="./pesquisarAluno.jsp">Aluno</a></li>
                             <li><a href="./pesquisarUsuario.jsp">Usuario</a></li>

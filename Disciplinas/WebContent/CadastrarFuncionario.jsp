@@ -16,10 +16,9 @@
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Cadastro de funcionario</h3>
 		<form action="CadastrarFuncionarioServelet" method="post">
-			<div class="alert alert-info alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+		
 				<c:out value="${msg}"></c:out>
-			</div>
+			
 
 			<div class="row">
 

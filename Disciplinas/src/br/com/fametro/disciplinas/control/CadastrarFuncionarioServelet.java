@@ -73,9 +73,9 @@ public class CadastrarFuncionarioServelet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
-		String matricula = request.getParameter("matricula");
+//		String matricula = request.getParameter("matricula");
 		String cargo = request.getParameter("cargo");
-		funcionario = new Funcionario(senha, nome, email, matricula, GeradorId.gerarId(), cargo);
+		funcionario = new Funcionario(senha, nome, email, GeradorId.gerarMatricula(), GeradorId.gerarId(), cargo);
 		return funcionario;
 	}
 
@@ -83,7 +83,6 @@ public class CadastrarFuncionarioServelet extends HttpServlet {
 		boolean erro = true;
 		if (funcionario.getNome() == "" || funcionario.getNome() == null || funcionario.getSenha() == ""
 				|| funcionario.getSenha() == null || funcionario.getEmail() == "" || funcionario.getEmail() == null
-				|| funcionario.getMatricula() == "" || funcionario.getMatricula() == null
 				|| funcionario.getCargo() == null || funcionario.getCargo() == "") {
 			erro = false;
 			return erro;

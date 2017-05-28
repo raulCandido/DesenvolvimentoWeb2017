@@ -77,7 +77,7 @@ public class CadastrarUsuarioServelet extends HttpServlet {
 					e.printStackTrace();
 				}
 			} catch (UsuarioJaExiste e) {
-				getServletContext().setAttribute("msg",e.getMessage());
+				getServletContext().setAttribute("msg", e.getMessage());
 				getServletContext().getRequestDispatcher("/CadastrarUsuario.jsp").forward(request, response);
 			}
 		}
@@ -89,16 +89,15 @@ public class CadastrarUsuarioServelet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
-		String matricula = request.getParameter("matricula");
-		usuario = new Usuario(senha, nome, email, matricula, GeradorId.gerarId());
+		// String matricula = request.getParameter("matricula");
+		usuario = new Usuario(senha, nome, email, GeradorId.gerarMatricula(), GeradorId.gerarId());
 		return usuario;
 	}
 
 	private boolean isvalido(Usuario usuario) {
 		boolean erro = true;
 		if (usuario.getNome() == "" || usuario.getNome() == null || usuario.getSenha() == ""
-				|| usuario.getSenha() == null || usuario.getEmail() == "" || usuario.getEmail() == null
-				|| usuario.getMatricula() == "" || usuario.getMatricula() == null) {
+				|| usuario.getSenha() == null || usuario.getEmail() == "" || usuario.getEmail() == null) {
 			erro = false;
 			return erro;
 		}

@@ -16,11 +16,7 @@
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Cadastro de Usuario</h3>
 		<form action="CadastrarUsuarioServelet" method="post">
-			<div class="alert alert-info alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-				<c:out value="${msg}"></c:out>
-			</div>
-
+			<c:out value="${msg}"></c:out>
 			<div class="row">
 
 				<div class="form-group col-md-4">
@@ -44,7 +40,7 @@
 			<hr />
 			<div id="actions" class="row">
 				<div class="col-md-12">
-					<button type="submit"  class="btn btn-primary">Salvar</button>
+					<button type="submit" class="btn btn-primary">Salvar</button>
 					<a href="index.html" class="btn btn-default">Cancelar</a>
 				</div>
 			</div>

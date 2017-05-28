@@ -75,17 +75,16 @@ public class CadastrarAlunoServelet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
-		String matricula = request.getParameter("matricula");
+//		String matricula = request.getParameter("matricula");
 		String periodo = request.getParameter("periodo");
-		aluno = new Aluno(senha, nome, email, matricula, GeradorId.gerarId(), periodo);
+		aluno = new Aluno(senha, nome, email, GeradorId.gerarMatricula(), GeradorId.gerarId(), periodo);
 		return aluno;
 	}
 
 	private boolean isvalido(Aluno aluno) {
 		boolean erro = true;
 		if (aluno.getNome() == "" || aluno.getNome() == null || aluno.getSenha() == "" || aluno.getSenha() == null
-				|| aluno.getEmail() == "" || aluno.getEmail() == null || aluno.getMatricula() == ""
-				|| aluno.getMatricula() == null || aluno.getPeriodo() == null || aluno.getPeriodo() == "") {
+				|| aluno.getEmail() == "" || aluno.getEmail() == null ||  aluno.getPeriodo() == null || aluno.getPeriodo() == "") {
 			erro = false;
 			return erro;
 		}

@@ -15,33 +15,35 @@
 <body>
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Cadastrar Turma</h3>
-		<form action="CadastrarDisciplinas" method="post">
-		<div class="alert alert-info alert-dismissable">
+
+		<form action="CadastrarTurmaServelet" method="post">
+			<div class="alert alert-info alert-dismissable">
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 				<c:out value="${msg}"></c:out>
 			</div>
 			<div class="row">
 
 				<div class="form-group col-md-1">
-					<label for="ano">Ano da turma</label>
-					 <input type="number" class="form-control" id="ano" name="ano" maxlength="4" required>
+					<label for="ano">Ano da turma</label> <input type="number"
+						class="form-control" id="ano" name="ano" maxlength="4" required>
 				</div>
 
 
 				<div class="form-group col-md-1">
-					<label for="semestre">Semestre</label> <input type="text"
+					<label for="semestre">Semestre</label> <input type="number"
 						class="form-control" id="semestre" name="semestre" required>
 				</div>
 
 				<div class="form-group col-md-3">
-					<label for="diaSemana">Dia da semana</label> <input
-						type="text" class="form-control" id="diaSemana" name="diaSemana" required>
+					<label for="diaSemana">Dia da semana</label> <input type="text"
+						class="form-control" id="diaSemana" name="diaSemana" required>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-5">
-					<label for="observacao">Observacao</label>
-						<textarea rows="5" class="form-control" id="observacao" name="observacao" required></textarea>
+					<label for="observacao">Descricao detalhada</label>
+					<textarea rows="5" class="form-control" id="observacao"
+						name="observacao" required></textarea>
 				</div>
 			</div>
 			<hr />

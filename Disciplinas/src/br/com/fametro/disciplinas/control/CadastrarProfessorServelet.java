@@ -74,17 +74,16 @@ public class CadastrarProfessorServelet extends HttpServlet {
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
 		String email = request.getParameter("email");
-		String matricula = request.getParameter("matricula");
+//		String matricula = request.getParameter("matricula");
 		String formacao = request.getParameter("formacao");
-		professor = new Professor(senha, nome, email, matricula, GeradorId.gerarId(),formacao);
+		professor = new Professor(senha, nome, email, GeradorId.gerarMatricula(), GeradorId.gerarId(), formacao);
 		return professor;
 	}
 
 	private boolean isvalido(Professor professor) {
 		boolean erro = true;
 		if (professor.getNome() == "" || professor.getNome() == null || professor.getSenha() == "" || professor.getSenha() == null
-				|| professor.getEmail() == "" || professor.getEmail() == null || professor.getMatricula() == ""
-				|| professor.getMatricula() == null || professor.getFormacao() == null || professor.getFormacao() == "") {
+				|| professor.getEmail() == "" || professor.getEmail() == null || professor.getFormacao() == null || professor.getFormacao() == "") {
 			erro = false;
 			return erro;
 		}

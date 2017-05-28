@@ -16,11 +16,7 @@
 	<div id="main" class="container-fluid">
 		<h3 class="page-header">Cadastro de Professor</h3>
 		<form action="CadastrarProfessorServelet" method="post">
-			<div class="alert alert-info alert-dismissable">
-				<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-				<c:out value="${msg}"></c:out>
-			</div>
-
+			<c:out value="${msg}"></c:out>
 			<div class="row">
 
 				<div class="form-group col-md-4">

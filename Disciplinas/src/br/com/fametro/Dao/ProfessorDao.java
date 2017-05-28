@@ -30,7 +30,7 @@ public class ProfessorDao extends RegistrarJDBCAdapter {
 			try {
 				insert.setString(1, professor.getNome());
 				insert.setString(2, professor.getEmail());
-				insert.setString(3, professor.getMatricula());
+				insert.setInt(3, professor.getMatricula());
 				insert.setString(4, professor.getSenha());
 				insert.setString(5, professor.getFormacao());
 				insert.setBoolean(6, true);

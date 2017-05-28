@@ -31,7 +31,7 @@ public class AlunoDao extends RegistrarJDBCAdapter {
 			try {
 				insert.setString(1, aluno.getNome());
 				insert.setString(2, aluno.getEmail());
-				insert.setString(3, aluno.getMatricula());
+				insert.setInt(3, aluno.getMatricula());
 				insert.setString(4, aluno.getSenha());
 				insert.setString(5, aluno.getPeriodo());
 				insert.setBoolean(6, true);

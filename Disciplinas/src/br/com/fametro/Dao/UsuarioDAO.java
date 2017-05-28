@@ -24,7 +24,7 @@ public class UsuarioDAO extends RegistrarJDBCAdapter {
 			PreparedStatement insert = connection.prepareStatement(sqlInsert);
 
 			try {
-				insert.setString(1, usuario.getMatricula());
+				insert.setInt(1, usuario.getMatricula());
 				insert.setString(2, usuario.getEmail());
 				insert.setString(3, usuario.getNome());
 				insert.setString(4, usuario.getSenha());

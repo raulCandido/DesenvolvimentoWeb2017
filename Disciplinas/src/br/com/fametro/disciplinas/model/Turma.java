@@ -8,6 +8,12 @@ public class Turma {
 	private String diaDaSemana;
 	private String obersevacao;
 
+	public Turma(int ano, int semestre, String diaDaSemana, String observacao) {
+		setAno(ano);
+		setSemestre(semestre);
+		setDiaDaSemana(diaDaSemana);
+		setObersevacao(observacao);
+	}
 	public String getObersevacao() {
 		return obersevacao;
 	}

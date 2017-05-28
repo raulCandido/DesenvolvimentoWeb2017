@@ -1,24 +1,16 @@
 package br.com.fametro.disciplinas.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-import br.com.fametro.Dao.RegistrarJDBCAdapter;
-import br.com.fametro.disciplinas.exception.FalhaNoSistema;
-import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
-
 public class Usuario {
 
 	private int id;
 	private String senha;
 	private String nome;
 	private String email;
-	private String matricula;
+	private int matricula;
 	
 	
 	
-	public Usuario(String senha, String nome, String email, String matricula, int id) {
+	public Usuario(String senha, String nome, String email, int matricula, int id) {
 		setNome(nome);
 		setEmail(email);
 		setMatricula(matricula);
@@ -27,6 +19,21 @@ public class Usuario {
 	}
 
 	
+	public Usuario(String nome) {
+		setNome(nome);
+	}
+
+
+	public int getMatricula() {
+		return matricula;
+	}
+
+
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -47,13 +54,7 @@ public class Usuario {
 		this.email = email;
 	}
 
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
+	
 
 	public void setId(int id) {
 		this.id = id;
