@@ -1,7 +1,5 @@
 package br.com.fametro.Dao;
 
-import java.sql.Connection;
-
 import javax.sql.DataSource;
 
 public class RegistrarJDBCAdapter {

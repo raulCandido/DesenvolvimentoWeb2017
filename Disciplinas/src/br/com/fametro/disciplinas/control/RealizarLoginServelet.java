@@ -35,43 +35,57 @@ public class RealizarLoginServelet extends HttpServlet {
 		usuarioDAO = new UsuarioDAO(dataSource);
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		processRequest(request, response);
 	}
 
 	private void processRequest(HttpServletRequest request, HttpServletResponse response) {
-		tratarConsulta(request);
-		
-	}
-
-	private boolean tratarConsulta(HttpServletRequest request) {
-		int matricula = Integer.parseInt(request.getParameter("matricula"));
+		Integer matricula = Integer.parseInt(request.getParameter("matricula"));
 		String senha = request.getParameter("senha");
-		List<Usuario> listaUsuario = usuarioDAO.ResultSetlistaUsuario();
-		for (Usuario usuario : listaUsuario) {
-			if (usuario.getMatricula() == matricula && usuario.getSenha().equals(senha)) {
-				return true;
-			} 
-			
+		if (matricula == null && senha.equals(null) || senha.equals("")) {
+			try {
+				// nunca vai chegar aqui html nao deixa//desencargo de
+				// consciencia
+				response.sendRedirect("./index.jsp");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			Usuario usuarioValidado = validarLogin(matricula, senha);
+			if (usuarioValidado != null) {
+				try {
+					response.sendRedirect("./menu.jsp");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				try {
+					getServletContext().setAttribute("msg", "Usuario nao cadastrado");
+					getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+				} catch (ServletException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
-		return false;
-
 	}
 
+	private Usuario validarLogin(Integer matricula, String senha) {
+		Usuario usuarioValidado = usuarioDAO.ResultSetPegarUsuarioEspecifico(new Usuario(matricula, senha));
+		if (usuarioValidado == null) {
+			return null;
+		} else {
+			return usuarioValidado;
+		}
+	}
 }

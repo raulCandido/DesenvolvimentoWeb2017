@@ -21,6 +21,12 @@ public class Usuario {
 		setSenha(senha);
 		setId(id);
 	}
+	public Usuario(String senha, String nome, String email, int id) {
+		setId(id);
+		setSenha(senha);
+		setNome(nome);
+		setEmail(email);
+	}
 
 	public Usuario(String nome) {
 		setNome(nome);

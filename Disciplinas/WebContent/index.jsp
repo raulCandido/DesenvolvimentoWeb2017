@@ -25,9 +25,8 @@
 <body>
 
 	<img class="localizacaologofamentro" src="resources/img/logo_fametro.png"	alt="Foto logo da Fametro">
-	<form  action="ControleUsuario" method="post">
-	
-	
+	<form  action="RealizarLoginServelet" method="post">
+	<c:out value="${msg}"></c:out>
 		<div class="formulariodelogin">
 			<div class="form-group labelsadireta">
 				<label for="matricula">Matricula </label> 
