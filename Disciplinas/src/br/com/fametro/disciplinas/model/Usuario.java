@@ -7,9 +7,13 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private int matricula;
-	
-	
-	
+
+	public Usuario(int matricula, String senha) {
+		setMatricula(matricula);
+		setSenha(senha);
+
+	}
+
 	public Usuario(String senha, String nome, String email, int matricula, int id) {
 		setNome(nome);
 		setEmail(email);
@@ -18,21 +22,17 @@ public class Usuario {
 		setId(id);
 	}
 
-	
 	public Usuario(String nome) {
 		setNome(nome);
 	}
-
 
 	public int getMatricula() {
 		return matricula;
 	}
 
-
 	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
-
 
 	public int getId() {
 		return id;
@@ -53,8 +53,6 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	
 
 	public void setId(int id) {
 		this.id = id;
