@@ -13,6 +13,9 @@ public class Usuario {
 		setSenha(senha);
 
 	}
+	public Usuario(Integer codigo) {
+		setId(codigo);
+	}
 
 	public Usuario(String senha, String nome, String email, int matricula, int id) {
 		setNome(nome);

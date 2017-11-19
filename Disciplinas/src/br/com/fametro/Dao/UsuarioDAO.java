@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 import br.com.fametro.disciplinas.exception.FalhaNoSistema;
 import br.com.fametro.disciplinas.exception.UsuarioJaExiste;
-import br.com.fametro.disciplinas.model.Turma;
 import br.com.fametro.disciplinas.model.Usuario;
 
 public class UsuarioDAO extends RegistrarJDBCAdapter {
@@ -51,7 +50,6 @@ public class UsuarioDAO extends RegistrarJDBCAdapter {
 
 	public List<Usuario> ResultSetlistaUsuario() {
 		Connection connection = null;
-
 		try {
 			connection = dataSource.getConnection();
 			Statement statement = connection.createStatement();
@@ -71,7 +69,6 @@ public class UsuarioDAO extends RegistrarJDBCAdapter {
 
 	public List<Usuario> ResultSetlistaUsuarioCompleto() {
 		Connection connection = null;
-
 		try {
 			connection = dataSource.getConnection();
 			Statement statement = connection.createStatement();
@@ -86,7 +83,6 @@ public class UsuarioDAO extends RegistrarJDBCAdapter {
 				listaUsuario.add(new Usuario(senha, nome, email, matricula, id));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return listaUsuario;
@@ -115,5 +111,29 @@ public class UsuarioDAO extends RegistrarJDBCAdapter {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	public List<Usuario> ResultSetPegarUsuarioEspecificoPorCodigo(Integer codigoUsuario) {
+		Connection connection = null;
+		try {
+			connection = dataSource.getConnection();
+			Statement statement = connection.createStatement();
+			String consultaUsu = "SELECT * FROM TB_USUARIO where USUARIO_ID = "+codigoUsuario;
+			ResultSet resultSet = statement.executeQuery(consultaUsu);
+			if (resultSet != null) {
+				while (resultSet.next()) {
+					int matricula = resultSet.getInt("USUARIO_MATRICULA");
+					String senha = resultSet.getString("USUARIO_SENHA");
+					String nome = resultSet.getString("USUARIO_NOME");
+					String email = resultSet.getString("USUARIO_EMAIL");
+					Integer id = resultSet.getInt("USUARIO_ID");
+					listaUsuario.add(new Usuario(senha, nome, email, matricula, id));
+				}
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listaUsuario;
 	}
 }

@@ -14,36 +14,49 @@
 </head>
 <body>
 	<div id="main" class="container-fluid">
-		<h3 class="page-header">Pesquisar usuario</h3>
-		<form action=""></form>
-		<div class="row">
-			<div class="form-group col-md-4">
-				<label for="idusuario">Id usuario</label> <input type="number"
-					class="form-control" id="idUsuario">
+		<h3 class="page-header">Pesquisar Usuario</h3>
+		<form action="ListarUsuario" method="post">
+			<div class="row">
+				<div class="form-group col-md-1">
+					<label for="codUsuario">Codigo Usuario</label> <input type="number"
+						class="form-control" id="codUsuario" name="codUsuario">
+				</div>
 			</div>
-
-			<div class="form-group col-md-4">
-				<label for="idpessoa">id pessoa</label> <input type="number"
-					class="form-control" id="idpessoa">
+			<div id="list" class="row">
+				<div class="table-responsive col-md-13">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Codigo Usuario</th>
+								<th>Nome</th>
+								<th>Email</th>
+								<th>Matricula</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${listaUsuario}" var="itens">
+								<tr>
+									<td><c:out value="${itens.id}"></c:out></td>
+									<td><c:out value="${itens.nome}"></c:out></td>
+									<td><c:out value="${itens.email}"></c:out></td>
+									<td><c:out value="${itens.matricula}"></c:out></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
-
-			<div class="form-group col-md-4">
-				<label for="senha">senha</label> <input type="text"
-					class="form-control" id="senha">
-			</div>
-		</div>
+			<button type="submit" class="btn btn-primary">Pesquisar</button>
+		</form>
 		<hr />
 		<div id="actions" class="row">
 			<div class="col-md-12">
-				<button type="submit" class="btn btn-primary">Pesquisar</button>
-				<form action="ControleUsuario">
+				<form action="ControleTurma">
 					<button type="submit" class="btn btn-primary" name="novo">Novo</button>
 					<button type="submit" class="btn btn-default" name="limpar">Limpar</button>
 				</form>
-
 			</div>
 		</div>
-
 	</div>
 
 </body>
